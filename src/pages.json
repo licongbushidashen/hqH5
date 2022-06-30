@@ -1,0 +1,125 @@
+{
+  "easycom": {
+    "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+  },
+  "pages": [
+    {
+      "path": "pages/tabBar/home/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/content/pad",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/tabBar/shepun/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/tabBar/home/list",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/tabBar/home/service",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/tabBar/xiaoxi/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/tabBar/my/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/content/venue",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/content/vuenu1",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/content/venueDe",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/content/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/content/serviceManual",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/content/goHome",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/error/404",
+      "style": {
+        "navigationBarTitleText": "Not Found"
+      }
+    }
+  ],
+
+  "tabBar": {
+    "color": "#A3A9B0",
+    "selectedColor": "#24A056",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "height": "60px",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/home/index",
+        "iconPath": "static/img/home.png",
+        "selectedIconPath": "static/img/home_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tabBar/home/service",
+        "iconPath": "static/img/shequn.png",
+        "selectedIconPath": "static/img/shequn_active.png",
+        "text": "服务"
+      },
+      {
+        "pagePath": "pages/tabBar/shepun/index",
+        "iconPath": "static/img/xiaoxi.png",
+        "selectedIconPath": "static/img/xiaoxi_active.png",
+        "text": "反馈"
+      },
+      {
+        "pagePath": "pages/tabBar/my/index",
+        "iconPath": "static/img/mine.png",
+        "selectedIconPath": "static/img/mine_active.png",
+        "text": "我的"
+      }
+    ]
+  }
+}
