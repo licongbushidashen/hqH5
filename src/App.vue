@@ -103,7 +103,9 @@ export default {
 
 /* H5 兼容 pc 所需 */
 /* #ifdef H5 */
-
+body{
+  background: #F6F7FD;
+}
 @media screen and (min-width: 768px) {
   body {
     overflow-y: scroll;

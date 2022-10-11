@@ -76,12 +76,12 @@ if (process.env.NODE_ENV === "production") {
   // Vue.prototype.urlhttp = "https://zjlab-logistics.demo.wy5u.com/api/logistics/files/www/"
   // Vue.prototype.rzs = "https://zjlab-logistics-auth.demo.wy5u.com/.well-known/openid-configuration"
   // Vue.prototype.rzss = "https://zjlab-logistics-auth.demo.wy5u.com/connect/token"
-  Vue.prototype.https = 'https://hqauth.zhejianglab.com'
+  Vue.prototype.https = '/hq'
   Vue.prototype.urlhttp =
-    'https://hqauth.zhejianglab.com/api/logistics/files/www/'
+    '/hq/api/logistics/files/www/'
   Vue.prototype.rzs =
-    'https://hqauth.zhejianglab.com/.well-known/openid-configuration'
-  Vue.prototype.rzss = 'https://hqauth.zhejianglab.com/connect/token'
+    '/hq/.well-known/openid-configuration'
+  Vue.prototype.rzss = '/hq/connect/token'
 }
 
 function openphone(val){

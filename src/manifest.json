@@ -138,7 +138,20 @@
         },
         "devServer" : {
             "port" : 4200,
-            "https" : false
+            "proxy": {
+                "/hq/": {
+                  "target": "https://hqauth.zhejianglab.com",
+                  "changeOrigin": true,
+                  "pathRewrite": { "^/hq": "" }
+                },
+                "/sbauth/": {
+                  "target": "https://yqdj-auth-test.zhejianglab.com",
+                  "changeOrigin": true,
+                  "pathRewrite": {
+                    "^/sbauth": ""
+                  }
+                }
+              }
         }
     },
     "vueVersion" : "2"

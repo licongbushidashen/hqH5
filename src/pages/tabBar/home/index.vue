@@ -22,7 +22,7 @@
         </div>
       </view> -->
 			<view v-if="urls == 0">
-				<u-swiper class="swipersIMG" style="margin-top: 32rpx; margin-left: 20px" height="500rpx" @click="swiperOpen" :list="list1s" previousMargin="0" nextMargin="120" circular :autoplay="false" radius="5" bgColor="#ffffff"></u-swiper>
+				<u-swiper class="swipersIMG" style="margin-top: 32rpx; margin-left: 20px" height="600rpx" @click="swiperOpen" :list="list1s" previousMargin="0" nextMargin="120" circular :autoplay="false" radius="5" bgColor="#ffffff"></u-swiper>
 				<!-- :class="swiperList1==0?'not_dot':''" -->
 				<swiper :indicator-dots="swiperList1.length ? true : false" class="swiper" style="margin-top: 48rpx" :style="heightlg()">
 					<swiper-item>
@@ -30,7 +30,7 @@
 							<u-grid-item :customStyle="{ width: '25%' }" v-for="(item, index) in swiperList" :index="index" :key="index" @click="swiperOpen1(item)">
 								<!-- <u-icon :customStyle="{paddingTop:20+'rpx'}" :size="22" class="icon icon-tongzhi"></u-icon> -->
 								<u--image :src="urlhttp + item.icon" width="51px" height="51px" />
-								<text class="grid-text" style="margin: 8px 0px; color: #282828; font-size: 14px">{{ item.name }}</text>
+								<text class="grid-text" style="margin: 12px 0px 20px 0px; color: #6E6E6E;font-weight: 400; font-size: 13px;font-family: PingFangSC-Regular, PingFang SC;">{{ item.name }}</text>
 							</u-grid-item>
 						</u-grid>
 					</swiper-item>
@@ -86,15 +86,16 @@
 					<u-list  class="unheight">
 						<u-list-item class="list_notice" v-for="(item, index) in indexList" :key="index">
 							<h1  @tap="article(item)">{{ item.title }}</h1>
+							<p  @tap="article(item)"  style="margin-top: 4px">
+								<!-- 来源：{{item.creatorId}} -->
+								{{ item.creationTime | formatDate }}
+							</p>
 							<view  @tap="article(item)" class="item-attachments" v-if="item.imgs.length > 0" :style="stylegl(item.imgs.length)">
 								<view v-for="(img, index) in item.imgs" :key="index">
 									<image :src="img" mode="aspectFill"> </image>
 								</view>
 							</view>
-							<p  @tap="article(item)"  style="margin-top: 10px">
-								<!-- 来源：{{item.creatorId}} -->
-								{{ item.creationTime | formatDate }}
-							</p>
+							<u-cell title="停车坐爱枫林晚" :isLink="true" arrow-direction="left"></u-cell>
 						</u-list-item>
 					</u-list>
 				</view>
@@ -154,7 +155,6 @@ export default {
 		}
 	},
 	mounted() {
-		debugger
 		// document.getElementsByClassName('u-tabs__wrapper__nav__line')[0].style.width = '50px'
 		// document.getElementsByClassName('u-tabs__wrapper__nav__line')[0].style.left = `-20px`
 		var query = this.$route.query
@@ -253,14 +253,12 @@ export default {
 					};height:100%`
 				}
 				if (cindex == 1 && this.zjsh.length - (index + 1) >= 2) {
-					style = `background:${
-						item.bgColor
-					};grid-column-start:${cindex};grid-column-end:${cindex};grid-row-start:${
+					style = `background:#fff;grid-column-start:${cindex};grid-column-end:${cindex};grid-row-start:${
 						rindex + 1
 					};grid-row-end:${rindex + 3};height:100%`
 				}
 				if (cindex == 0 && this.zjsh.length - (index + 1) < 2) {
-					style = `background:${item.bgColor};grid-column-start:${
+					style = `background:#fff;grid-column-start:${
 						cindex + 2
 					};grid-column-end:${
 						cindex + 2
@@ -269,9 +267,7 @@ export default {
 					};height:100%`
 				}
 				if (cindex == 1 && this.zjsh.length - (index + 1) < 2) {
-					style = `background:${
-						item.bgColor
-					};grid-column-start:${cindex};grid-column-end:${cindex};grid-row-start:${
+					style = `background:#fff;grid-column-start:${cindex};grid-column-end:${cindex};grid-row-start:${
 						rindex + 1
 					};grid-row-end:${rindex + 12};height:100%`
 				}
@@ -288,7 +284,7 @@ export default {
 				//         }
 				return style
 			} else {
-				return `background:${item.bgColor}`
+				return `background:#fff`
 			}
 		},
 		heightlg() {
@@ -488,6 +484,9 @@ this.openUrlWin(item.url, this)
 }
 </script>
 <style lang="scss">
+.swipersIMG{
+background: none !important;
+}
 .tabs_new {
 	display: flex;
 	position: relative;
@@ -523,25 +522,29 @@ this.openUrlWin(item.url, this)
 	width: 100%;
 }
 .notice .list_notice {
+	background: #FFFFFF;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 10px;
 	h1 {
-		font-size: 14px;
-		font-family: PingFangSC-Regular, PingFang SC;
-		font-weight: 400;
-		color: #282828;
+		font-size: 16px;
+font-family: PingFangSC-Medium, PingFang SC;
+font-weight: 500;
+color: #1E243A;
 	}
 	p {
 		font-size: 12px;
-		font-family: PingFangSC-Regular, PingFang SC;
-		font-weight: 400;
-		color: #999999;
-		&::after {
-			content: '';
-			display: block;
-			height: 1px;
-			background: #efefef;
-			width: 100%;
-			margin: 12px 0px;
-		}
+font-family: PingFangSC-Regular, PingFang SC;
+font-weight: 400;
+color: #A3A9B0;
+		// &::after {
+		// 	content: '';
+		// 	display: block;
+		// 	height: 1px;
+		// 	background: #efefef;
+		// 	width: 100%;
+		// 	margin: 12px 0px;
+		// }
 		span {
 			font-size: 12px;
 			font-family: PingFangSC-Regular, PingFang SC;
@@ -639,7 +642,7 @@ this.openUrlWin(item.url, this)
 	> .zjsh_all_one {
 		min-width: 334rpx;
 		height: 83px;
-		border-radius: 4px;
+		border-radius: 8px;
 		h1 {
 			margin: 14px 0px 0px 10px;
 			margin-bottom: 5px;

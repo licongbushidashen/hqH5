@@ -60,7 +60,6 @@ export default {
         this.h = res.data ? res.data.title : '暂无数据'
         this.creationTime = res.data.creationTime
       }).catch(res=>{
-        debugger
       })
     },
 

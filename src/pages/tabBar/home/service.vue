@@ -31,7 +31,6 @@ export default {
     },
     clicks(item) {
       // window.location.href = item.url
-      debugger
       this.openUrlWin(item.url, this)
     },
     appInfo() {
